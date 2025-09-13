@@ -150,4 +150,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3502c0a (Initial commit)
+>>>>>>> db74fbe (Updated index.ts for assign a dynamic port via process.env.PORT)

@@ -5,7 +5,6 @@ import http from "http";
 import cors from "cors";
 import roomHandler from "./handlers/roomHandler";
 
-
 const app = express();
 
 app.use(cors());
@@ -14,7 +13,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: "*",
+        origin: "*", // later you can replace "*" with your frontend URL
         methods: ["GET", "POST"]
     }
 });
@@ -22,11 +21,15 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
     console.log("New user connected");
     roomHandler(socket); // pass the socket conn to the room handler for room creation and joining
+
     socket.on("disconnect", () => {
         console.log("User disconnected");
     });
 });
 
-server.listen(ServerConfig.PORT, () => {
-    console.log(`Server is up at port ${ServerConfig.PORT}`);
+// ✅ Use environment port for deployment
+const PORT = process.env.PORT || ServerConfig.PORT;
+
+server.listen(PORT, () => {
+    console.log(`Server is up at port ${PORT}`);
 });
