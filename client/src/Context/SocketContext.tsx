@@ -76,17 +76,17 @@ export const SocketProvider: React.FC<Props> = ({ children }) => {
     console.log("Calling the new peer", peerId);
 
     // Listen for the incoming peer's stream
-    call.on("stream", (peerStream) => {
+    call.on("stream", (peerStream : MediaStream) => {
         console.log("Received stream from peer", peerId);
-        dispatch(addPeerAction(peerId, peerStream)); // Use the new stream from the peer
+        dispatch(addPeerAction(peerId, peerStream)); // Use the new stream from the peer 
     });
 });
 
-        user.on("call", (call) => {
+        user.on("call", (call:any) => {
             // what to do when other peers on the group call you when u joined
             console.log("receiving a call",call.peer);
             call.answer(stream);
-            call.on("stream", (peerStream) => {
+            call.on("stream", (peerStream : MediaStream) => {
                 dispatch(addPeerAction(call.peer, peerStream));
             })
         })
