@@ -2,8 +2,9 @@ import { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { SocketContext } from "../Context/SocketContext";
 import UserFeedPlayer from "../Components/UserFeedPlayer";
+import type { FC } from "react";
 
-const Room: React.FC = () => {
+const Room: FC = () => {
 
     const { id } = useParams();
     const { socket, user, stream, peers } = useContext(SocketContext);

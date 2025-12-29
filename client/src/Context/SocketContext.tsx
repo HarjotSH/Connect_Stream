@@ -5,6 +5,7 @@ import Peer from "peerjs";
 import { v4 as UUIDv4 } from "uuid";
 import { peerReducer } from "../Reducers/peerReducer";
 import { addPeerAction } from "../Actions/peerAction";
+import type { FC } from "react";
 
 const WS_Server = "http://localhost:5000";
 // const WS_Server = "http://localhost:3000";
@@ -21,7 +22,7 @@ interface Props {
     children: React.ReactNode
 }
 
-export const SocketProvider: React.FC<Props> = ({ children }) => {
+export const SocketProvider: FC<Props> = ({ children }) => {
 
     const navigate = useNavigate(); // will help to programatically handle navigation
     

@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
+import type { FC } from "react";
 
-const UserFeedPlayer : React.FC<{stream?: MediaStream}> = ({stream}) => {
+const UserFeedPlayer : FC<{stream?: MediaStream}> = ({stream}) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     useEffect(() => {
