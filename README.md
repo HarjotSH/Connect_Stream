@@ -2,8 +2,9 @@
 ---
 
 # Video Call App
-
-This project is a **Video Calling Application** built using **WebRTC** for real-time video communication, **Socket.io** for managing real-time connections between users, **React** for the frontend, and **Node.js** with **TypeScript** for the backend server.
+<img width="1312" height="676" alt="Connect_Stream_img" src="https://github.com/user-attachments/assets/f06c3082-a11f-498e-ad1f-acbcab2b92f6" />
+This project is a **Video Calling Application** built using **WebRTC** for real-time video communication, **Socket.io** for managing real-time connections
+ between users, **React** for the frontend, and **Node.js** with **TypeScript** for the backend server.
 
 ## Features
 
