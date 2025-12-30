@@ -55,7 +55,6 @@ export const SocketProvider: FC<Props> = ({ children }) => {
     const newPeer = new Peer(userId, {
       host: "connect-stream-1.onrender.com",
       secure: true,
-      path: "/peerjs",
       config: { 
         iceServers: [
           { urls: "stun:stun.l.google.com:19302" },
