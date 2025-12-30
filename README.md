@@ -92,35 +92,25 @@ The backend server runs on **Node.js** with **Socket.io** and manages real-time 
 🔗 Local vs Deployed Usage (Important)
 Using the App Without Deployment (Local Setup)
 
-When running the project locally using localhost:
-
-All participating devices must be connected to the same Wi-Fi network / router
-
-WebRTC peer discovery works reliably only within the same local network
+1. When running the project locally using localhost:
+2. All participating devices must be connected to the same Wi-Fi network / router
+3. WebRTC peer discovery works reliably only within the same local network
 
 Suitable for:
-
 Development and testing
-
 Local demos
-
 Classroom or lab environments
 
 ✅ Good for development
 ❌ Not suitable for users on different networks
 
-🌐 Using the App After Deployment (Production Setup)
-
+Using the App After Deployment (Production Setup)
 To enable real-time video calling between users on different devices, networks, or locations, the application must be deployed.
 
 After deployment:
-
 Users can join rooms from anywhere
-
 Supports different Wi-Fi networks and mobile data
-
 Suitable for real-world usage and production environments
-
 ✅ Required for real-time global users
 
 ## Project Structure
