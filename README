@@ -84,8 +84,42 @@ The backend server runs on **Node.js** with **Socket.io** and manages real-time 
 1. Open the app in your browser by visiting `http://localhost:3001`.
 2. Click on **Create Room** to generate a new room.
 3. Share the room link with another user to join the call.
-4. Enjoy real-time video and audio calling between peers.
+4. Allow camera and microphone permissions.
+5. Enjoy real-time video and audio calling between peers.
 
+🔗 Local vs Deployed Usage (Important)
+Using the App Without Deployment (Local Setup)
+
+When running the project locally using localhost:
+
+All participating devices must be connected to the same Wi-Fi network / router
+
+WebRTC peer discovery works reliably only within the same local network
+
+Suitable for:
+
+Development and testing
+
+Local demos
+
+Classroom or lab environments
+
+✅ Good for development
+❌ Not suitable for users on different networks
+
+🌐 Using the App After Deployment (Production Setup)
+
+To enable real-time video calling between users on different devices, networks, or locations, the application must be deployed.
+
+After deployment:
+
+Users can join rooms from anywhere
+
+Supports different Wi-Fi networks and mobile data
+
+Suitable for real-world usage and production environments
+
+✅ Required for real-time global users
 ## Project Structure
 
 ```bash
