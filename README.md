@@ -102,15 +102,20 @@ Local demos
 Classroom or lab environments
 
 ✅ Good for development
+
 ❌ Not suitable for users on different networks
 
 Using the App After Deployment (Production Setup)
 To enable real-time video calling between users on different devices, networks, or locations, the application must be deployed.
 
 After deployment:
+
 Users can join rooms from anywhere
+
 Supports different Wi-Fi networks and mobile data
+
 Suitable for real-world usage and production environments
+
 ✅ Required for real-time global users
 
 ## Project Structure
