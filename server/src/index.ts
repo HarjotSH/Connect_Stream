@@ -10,30 +10,41 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-
 app.use(cors());
 
 const server = http.createServer(app);
 
+/* ---------------- SOCKET.IO ---------------- */
 const io = new Server(server, {
-    cors: {
-        origin: "*", // later you can replace "*" with your frontend URL
-        methods: ["GET", "POST"]
-    }
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
 
-io.on("connection", (socket : Socket) => {
-    console.log("New user connected");
-    roomHandler(socket); // pass the socket conn to the room handler for room creation and joining
+io.on("connection", (socket: Socket) => {
+  console.log("New user connected");
+  roomHandler(socket);
 
-    socket.on("disconnect", () => {
-        console.log("User disconnected");
-    });
+  socket.on("disconnect", () => {
+    console.log("User disconnected");
+  });
 });
 
-// ✅ Use environment port for deployment
+/* ---------------- PEERJS (ESM-safe) ---------------- */
+(async () => {
+  const { ExpressPeerServer } = await import("peer");
+
+  const peerServer = ExpressPeerServer(server, {
+    path: "/peerjs"
+  });
+
+  app.use("/peerjs", peerServer);
+})();
+
+/* ---------------- START SERVER ---------------- */
 const PORT = process.env.PORT || ServerConfig.PORT;
 
 server.listen(PORT, () => {
-    console.log(`Server is up at port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });

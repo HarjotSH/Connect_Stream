@@ -53,10 +53,10 @@ export const SocketProvider: FC<Props> = ({ children }) => {
   useEffect(() => {
     const userId = UUIDv4();
     const newPeer = new Peer(userId, {
-      host: "peerjs-server.herokuapp.com",
+      host: "connect-stream-1.onrender.com",
       secure: true,
       path: "/peerjs",
-      config: {
+      config: { 
         iceServers: [
           { urls: "stun:stun.l.google.com:19302" },
           { urls: "stun:stun1.l.google.com:19302" },
