@@ -149,9 +149,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Socket.io** for real-time communication.
 - **React** for providing a robust frontend framework.
 
----
 
-<<<<<<< HEAD
 
 =======
 <<<<<<< HEAD
